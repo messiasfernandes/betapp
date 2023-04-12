@@ -1,0 +1,36 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.7.8'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+group = 'br.com.bepapp'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-hateoas'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.modelmapper:modelmapper:3.0.0'
+	implementation 'org.springdoc:springdoc-openapi-ui:1.6.0'
+	implementation 'net.coobird:thumbnailator:0.4.17'
+	compileOnly 'org.projectlombok:lombok'
+	// https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-ui
+    implementation group: 'org.springdoc', name: 'springdoc-openapi-ui', version: '1.6.9'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-validation', version: '2.7.8'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	implementation group: 'it.traeck.tools.openapi', name: 'openapi-validator-maven-plugin', version: '1.0.1'
+	runtimeOnly 'org.postgresql:postgresql'
+	annotationProcessor 'org.projectlombok:lombok'
+
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
